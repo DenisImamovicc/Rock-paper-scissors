@@ -7,33 +7,51 @@
         <script>
             function computerPlay(){ //Randomly return rock paper or scissors.
                 var robotChoiceMaker=Math.floor(Math.random() * 3); 
-
+                
                 if (robotChoiceMaker==0){
                     var robotChoice="Rock";
-                    
+                    console.log(robotChoiceMaker,robotChoice);
                 }
 
-                else if (robotChoiceMaker==0){
-                    var robotChoice="Rock";
-                    
+                else if (robotChoiceMaker==1){
+                    var robotChoice="Paper";
+                    console.log(robotChoiceMaker,robotChoice);
+
                 }
 
                 else {
-                    var robotChoice="Rock";
-                    
+                    var robotChoice="Scissors";
+                    console.log(robotChoiceMaker,robotChoice);
+
                 }
             }
 
-            function game(){
+            function game(){ //Simulate a round of the game and keep score for 5 rounds.
+                let menu=prompt("Want to play?:Yea/nay");
+                
+                if (menu=="Yea"){
+                    playRound();
+                }
+                else{
+                    console.log("Ok...Weirdo");
+                }
+
+
 
 
                 function playRound(playerSelection,computerSelection){
-                
+                    var playerSelection=prompt("Rock,Paper or scissor");
+                    var computerSelection=computerPlay();
+
+
                 
             }
 
             }
-            console.log(playRound(playerSelection,computerSelection));
+            game(); //Testing purpose.
+
+
+            //console.log(playRound(playerSelection,computerSelection));
         </script>
     </body>
 </html>
