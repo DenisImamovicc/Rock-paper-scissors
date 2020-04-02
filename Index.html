@@ -10,26 +10,26 @@
                 
                 if (robotChoiceMaker==0){
                     var robotChoice="Rock";
-                    console.log(robotChoiceMaker,robotChoice);
+                    console.log(robotChoice);
                 }
 
                 else if (robotChoiceMaker==1){
                     var robotChoice="Paper";
-                    console.log(robotChoiceMaker,robotChoice);
+                    console.log(robotChoice);
 
                 }
 
                 else {
                     var robotChoice="Scissors";
-                    console.log(robotChoiceMaker,robotChoice);
+                    console.log(robotChoice);
 
                 }
             }
 
             function game(){ //Simulate a round of the game and keep score for 5 rounds.
-                let menu=prompt("Want to play?:Yea/nay");
+                let menu=prompt("Want to play?:Y/n");
                 
-                if (menu=="Yea"){
+                if (menu=="Y"){
                     playRound();
                 }
                 else{
@@ -38,11 +38,41 @@
 
 
 
-
                 function playRound(playerSelection,computerSelection){
-                    var playerSelection=prompt("Rock,Paper or scissor");
+                    var playerSelection=prompt("Rock,Paper or Scissors");
                     var computerSelection=computerPlay();
 
+                    if(playerSelection =="Rock" && computerSelection =="Paper"){
+                        console.log("Rock got caught in the paper!!!.AI wins this round.");
+
+                    }
+                    else if(playerSelection=="Paper" && computerSelection=="Rock"){
+                        console.log("Rock got caught in the paper!!!.Human wins this round.");
+
+                    }
+                    else if(playerSelection=="Scissors" && computerSelection=="Paper"){
+                        console.log("Scissors shred the paper!!!.Human wins this round.");
+
+                    }
+ 
+                    else if(playerSelection=="Paper" && computerSelection=="Scissors"){
+                        console.log("Scissors shred the paper!!!.AI wins this round.");
+
+                    } 
+                    else if(playerSelection=="Scissors" && computerSelection=="Rock"){
+                        console.log("Rock broke the scissor.Human wins this round.");
+
+                    }
+ 
+                    else if(playerSelection=="Rock" && computerSelection=="Scissors"){
+                        console.log("Rock broke the scissor.AI wins this round.");
+
+                    }   
+
+                    else{
+                        console.log("Draw.No one won this round." ,playerSelection,computerSelection);
+                    }
+                    //return //This function may help w the problem of undefined computerplay on playround function.
 
                 
             }
