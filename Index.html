@@ -10,19 +10,17 @@
                 
                 if (robotChoiceMaker==0){
                     var robotChoice="Rock";
-                    console.log(robotChoice);
+                    return robotChoice;
                 }
 
                 else if (robotChoiceMaker==1){
                     var robotChoice="Paper";
-                    console.log(robotChoice);
-
+                    return robotChoice;
                 }
 
                 else {
                     var robotChoice="Scissors";
-                    console.log(robotChoice);
-
+                    return robotChoice;
                 }
             }
 
@@ -37,7 +35,7 @@
                 }
 
 
-
+                
                 function playRound(playerSelection,computerSelection){
                     var playerSelection=prompt("Rock,Paper or Scissors");
                     var computerSelection=computerPlay();
@@ -78,9 +76,7 @@
             }
 
             }
-            game(); //Testing purpose.
-
-
+            game();
             //console.log(playRound(playerSelection,computerSelection));
         </script>
     </body>
