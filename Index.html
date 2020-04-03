@@ -25,45 +25,51 @@
             }
 
             function game(){ //Simulate a round of the game and keep score for 5 rounds.
-                let menu=prompt("Want to play?:Y/n");
+                let menu=prompt("Want to play?:y/n").toLowerCase();
                 
-                if (menu=="Y"){
-                    playRound();
+                for (i=0;i<5;i++) {
+                    if(menu=="y"||menu==""){
+                        playRound();
+                    }
+                    else {
+                        console.log("ok,werido.");
+                    }
                 }
-                else{
-                    console.log("Ok...Weirdo");
-                }
+
+ 
 
 
                 
                 function playRound(playerSelection,computerSelection){
-                    var playerSelection=prompt("Rock,Paper or Scissors");
+                    var playerSelection=prompt("Rock,Paper or Scissors").toLowerCase();
                     var computerSelection=computerPlay();
-
-                    if(playerSelection =="Rock" && computerSelection =="Paper"){
+                    var playercount;
+                    var aicount;
+                    
+                    if(playerSelection =="rock" && computerSelection =="Paper"){
                         console.log("Rock got caught in the paper!!!.AI wins this round.");
-
                     }
-                    else if(playerSelection=="Paper" && computerSelection=="Rock"){
+                    else if(playerSelection=="paper" && computerSelection=="Rock"){
                         console.log("Rock got caught in the paper!!!.Human wins this round.");
+                        console.log(playercount++);
 
                     }
-                    else if(playerSelection=="Scissors" && computerSelection=="Paper"){
+                    else if(playerSelection=="scissors" && computerSelection=="Paper"){
                         console.log("Scissors shred the paper!!!.Human wins this round.");
 
                     }
  
-                    else if(playerSelection=="Paper" && computerSelection=="Scissors"){
+                    else if(playerSelection=="paper" && computerSelection=="Scissors"){
                         console.log("Scissors shred the paper!!!.AI wins this round.");
 
                     } 
-                    else if(playerSelection=="Scissors" && computerSelection=="Rock"){
-                        console.log("Rock broke the scissor.Human wins this round.");
+                    else if(playerSelection=="scissors" && computerSelection=="Rock"){
+                        console.log("Rock broke the scissors.AI wins this round.");
 
                     }
  
-                    else if(playerSelection=="Rock" && computerSelection=="Scissors"){
-                        console.log("Rock broke the scissor.AI wins this round.");
+                    else if(playerSelection=="rock" && computerSelection=="Scissors"){
+                        console.log("Rock broke the scissors.Human wins this round.");
 
                     }   
 
