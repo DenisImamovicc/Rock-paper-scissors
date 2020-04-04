@@ -26,62 +26,96 @@
 
             function game(){ //Simulate a round of the game and keep score for 5 rounds.
                 let menu=prompt("Want to play?:y/n").toLowerCase();
+                let playercount=0;
+                let aicount=0;
+
                 
                 for (i=0;i<5;i++) {
                     if(menu=="y"||menu==""){
                         playRound();
+                        
                     }
                     else {
                         console.log("ok,werido.");
                     }
                 }
 
- 
+                function pointKalkylator(playercount,aicount){
 
+                    
+                    if (aicount==1){
+                        aicount++;
+                    }
+                    
+                    else if(playercount==1){
+                        playercount++;
+                    }
+                    
+                }
+
+                function pointResult(){
+                    
+                    if (playercount>aicount ) {
+                            console.log("Player has won a 5 round game of Rock,Paper,Scissors! Score="+playercount+":"+aicount);
+                        }
+                    else if (aicount>playercount ) {
+                        console.log("Ai has won a 5 round game of Rock,Paper,Scissors! Score="+playercount+":"+aicount);
+                        }
+                    else{
+                        console.log("It's a draw! Score="+playercount+":"+aicount)
+                        }  
+                }
 
                 
                 function playRound(playerSelection,computerSelection){
                     var playerSelection=prompt("Rock,Paper or Scissors").toLowerCase();
                     var computerSelection=computerPlay();
-                    var playercount;
-                    var aicount;
+
                     
                     if(playerSelection =="rock" && computerSelection =="Paper"){
-                        console.log("Rock got caught in the paper!!!.AI wins this round.");
+                         aicount++;
+                         console.log("Rock got caught in the paper!!!.AI wins this round."+aicount);
+
                     }
                     else if(playerSelection=="paper" && computerSelection=="Rock"){
-                        console.log("Rock got caught in the paper!!!.Human wins this round.");
-                        console.log(playercount++);
+                         playercount++;
+                         console.log("Rock got caught in the paper!!!.Human wins this round."+playercount);
 
                     }
                     else if(playerSelection=="scissors" && computerSelection=="Paper"){
-                        console.log("Scissors shred the paper!!!.Human wins this round.");
+                         playercount++;
+                         console.log("Scissors shred the paper!!!.Human wins this round."+playercount);
 
                     }
- 
                     else if(playerSelection=="paper" && computerSelection=="Scissors"){
-                        console.log("Scissors shred the paper!!!.AI wins this round.");
+                         aicount++;
+                         console.log("Scissors shred the paper!!!.AI wins this round."+aicount);
 
                     } 
                     else if(playerSelection=="scissors" && computerSelection=="Rock"){
-                        console.log("Rock broke the scissors.AI wins this round.");
+                         aicount++;
+                         console.log("Rock broke the scissors.AI wins this round."+aicount);
 
                     }
- 
                     else if(playerSelection=="rock" && computerSelection=="Scissors"){
-                        console.log("Rock broke the scissors.Human wins this round.");
+                         playercount++;
+                         console.log("Rock broke the scissors.Human wins this round."+playercount);
 
                     }   
-
                     else{
                         console.log("Draw.No one won this round." ,playerSelection,computerSelection);
                     }
-                    //return //This function may help w the problem of undefined computerplay on playround function.
+                    
+                    console.log(aicount,playercount)
+                    pointKalkylator();
 
-                
+                }
+                pointResult();
+
+
             }
 
-            }
+            
             game();
             //console.log(playRound(playerSelection,computerSelection));
         </script>
