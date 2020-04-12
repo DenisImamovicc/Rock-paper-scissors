@@ -1,0 +1,34 @@
+div.Game {
+    border: solid;
+    width: 300px;
+    height: 500px;
+}
+
+div.Game-bttn-group .group{
+    display: block;
+    position: relative;
+
+}
+
+div.Anouncment-Score .group1{
+    display: block;
+    position: relative;
+    left: 200px;
+    top: -50px;
+
+}
+
+
+div.display {
+    border: solid;
+}
+
+button.Start {
+    color: green;
+
+}
+
+button.Reset {
+    color: yellowgreen;
+
+}
