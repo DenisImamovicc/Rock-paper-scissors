@@ -2,6 +2,7 @@ div.Game {
     border: solid;
     width: 300px;
     height: 500px;
+    position: relative;
 }
 
 div.Game-bttn-group .group{

@@ -2,7 +2,6 @@
 <html>
     <head>
        <link rel="stylesheet" href="game.css"> 
-       <script type="text/javascript" src="script.js"></script>
        <title>Rock,paper,scissor</title>
     </head>
 
@@ -24,22 +23,153 @@
             
             
             <div class="Game-bttn-group">
-                <button class="group">Rock</button>
-                <button class="group">Paper</button>
-                <button class="group">Scissors</button>                                
+                <button class="Rock">Rock</button>
+                <button class="Paper">Paper</button>
+                <button class="Scissors">Scissors</button>                                
             </div>
 
             <div class="Anouncment-Score">
                 <span class="group1">Anouncment</span>
-                <span class="group1">0:0</span>
+                <span class="group2">0:0</span>
                 
             
             
             </div>
 
 
-
+            
         </div>
 
+    <script>
+        
+function game(){ //Simulate a round of the game and keep score for 5 rounds.
+    let playercount=0;
+    let aicount=0;
+
+    const Rock =document.querySelector(".Rock");
+    const Paper =document.querySelector(".Paper");
+    const Scissors =document.querySelector(".Scissors");
+
+    Rock.onclick = () => playRound("Rock") 
+
+    Paper.onclick = () => playRound("Paper");
+
+    Scissors.onclick = () => playRound("Scissors");
+
+
+
+
+
+
+
+    
+    function computerPlay(){ //Randomly return rock paper or scissors.
+    var robotChoiceMaker=Math.floor(Math.random() * 3); 
+    
+    if (robotChoiceMaker==0){
+        var robotChoice="Rock";
+        return robotChoice;
+    }
+
+    else if (robotChoiceMaker==1){
+        var robotChoice="Paper";
+        return robotChoice;
+    }
+
+    else {
+        var robotChoice="Scissors";
+        return robotChoice;
+    }
+
+ }
+
+    function pointKalkylator(playercount,aicount){
+
+        
+        if (aicount==1){
+            aicount++;
+        }
+        
+        else if(playercount==1){
+            playercount++;
+        }
+        
+    }
+
+
+    function pointResult(){
+        
+        if (playercount==5 && aicount<playercount) {
+                console.log("Player has won a 5 round game of Rock,Paper,Scissors! Score="+playercount+":"+aicount);
+                stop;
+            }
+        else if (aicount==5 && playercount<aicount ) {
+            console.log("Ai has won a 5 round game of Rock,Paper,Scissors! Score="+playercount+":"+aicount);
+            stop;
+            }       
+            
+        else{
+            console.log()
+
+            }  
+    }
+    
+    function playRound(playerSelection,computerSelection){
+        var playerSelection;
+        var computerSelection=computerPlay();
+
+
+        
+        if(playerSelection =="Rock" && computerSelection =="Paper"){
+             aicount++;
+             console.log("Rock got caught in the paper!!!.AI wins this round.Score="+playercount+":"+aicount);
+
+        }
+        else if(playerSelection=="Paper" && computerSelection=="Rock"){
+             playercount++;
+             console.log("Rock got caught in the paper!!!.Human wins this round.Score="+playercount+":"+aicount);
+
+        }
+        else if(playerSelection=="Scissors" && computerSelection=="Paper"){
+             playercount++;
+             console.log("Scissors shred the paper!!!.Human wins this round.Score="+playercount+":"+aicount);
+
+        }
+        else if(playerSelection=="Paper" && computerSelection=="Scissors"){
+             aicount++;
+             console.log("Scissors shred the paper!!!.AI wins this round.Score="+playercount+":"+aicount);
+
+        } 
+        else if(playerSelection=="Scissors" && computerSelection=="Rock"){
+             aicount++;
+             console.log("Rock broke the scissors.AI wins this round.Score="+playercount+":"+aicount);
+
+        }
+        else if(playerSelection=="Rock" && computerSelection=="Scissors"){
+             playercount++;
+             console.log("Rock broke the scissors.Human wins this round.Score="+playercount+":"+aicount);
+
+        }   
+        else{
+            console.log("Draw.No one won this round." +playerSelection+""+computerSelection+ "Score="+playercount+":"+aicount);
+        }
+        
+        pointKalkylator();
+        pointResult();
+   
+
+   
+    }
+
+
+}
+game();
+
+//console.log(playRound(playerSelection,computerSelection));
+
+
+
+
+    </script>    
     </body>
 </html>
