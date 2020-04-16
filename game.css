@@ -5,13 +5,13 @@ div.Game {
     position: relative;
 }
 
-div.Game-bttn-group .group{
+div.Gamebttngroup .group{
     display: block;
     position: relative;
 
 }
 
-div.Anouncment-Score .group1{
+div.fiveRoundScore .group1{
     display: block;
     position: relative;
     left: 200px;
@@ -20,7 +20,7 @@ div.Anouncment-Score .group1{
 }
 
 
-div.display {
+div.everyRoundScore {
     border: solid;
 }
 

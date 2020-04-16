@@ -15,20 +15,20 @@
             </div>
             
             
-            <div class="display">
+            <div class="everyRoundScore">
                 <h1>Result</h1>
 
             </div>
             
             
             
-            <div class="Game-bttn-group">
+            <div class="Gamebttngroup">
                 <button class="Rock">Rock</button>
                 <button class="Paper">Paper</button>
                 <button class="Scissors">Scissors</button>                                
             </div>
 
-            <div class="Anouncment-Score">
+            <div class="fiveRoundScore">
                 <span class="group1">Anouncment</span>
                 <span class="group2">0:0</span>
                 
@@ -58,6 +58,10 @@ function game(){ //Simulate a round of the game and keep score for 5 rounds.
 
 
 
+    const everyRoundScore=document.querySelector(".everyRoundScore")
+    const fiveRoundScore=document.querySelector(".fiveRoundScore")
+
+    everyRoundScore.onclick = () =>  everyRoundScore.textContent = "pingas";
 
 
 
@@ -100,13 +104,16 @@ function game(){ //Simulate a round of the game and keep score for 5 rounds.
     function pointResult(){
         
         if (playercount==5 && aicount<playercount) {
-                console.log("Player has won a 5 round game of Rock,Paper,Scissors! Score="+playercount+":"+aicount);
-                stop;
+                console.log("Player has won a  game of Rock,Paper,Scissors! Score="+playercount+":"+aicount);
+                Rock.onclick = () => NaN; 
+                Paper.onclick = () => NaN;
+                Scissors.onclick = () => NaN;
             }
         else if (aicount==5 && playercount<aicount ) {
-            console.log("Ai has won a 5 round game of Rock,Paper,Scissors! Score="+playercount+":"+aicount);
-            stop;
-            }       
+                console.log("Ai has won a game of Rock,Paper,Scissors! Score="+playercount+":"+aicount);
+                Rock.onclick = () => NaN; 
+                Paper.onclick = () => NaN;
+                Scissors.onclick = () => NaN;            }       
             
         else{
             console.log()
