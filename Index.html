@@ -4,36 +4,51 @@
     <head>
         <link rel="stylesheet" href="game.css"> 
         <title>Rock,paper,scissor</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 
 <body>
-    <div class="Game">
-        <div class="Start/Reset-button">
-            <button class="Start">START</button>
-            <button class="Reset">RESET</button>
-        </div>
 
-        <div class="everyRoundScore">
-            <h1></h1>
-        </div>
+        <div class="Game">
+            <div class="startResetButton">
+                <button class="Start">START/RESET</button>
+            </div>
 
-        <div class="Gamebttngroup">
-            <button class="Rock">Rock</button>
-            <button class="Paper">Paper</button>
-            <button class="Scissors">Scissors</button> 
-        </div>
+            <div class="everyRoundScore">Press Start to play</div>
 
-        <div class="fiveRoundScore">
-            <span class="group1">Anouncment</span>
-            <span class="group2">0:0</span>
-        </div>
+            <div class="fiveRoundScore">Winner gets to five rounds first! </div>
 
-    </div>
+            <div class="Gamebttngroup">
+                <button class="Rock">Rock</button>
+                <button class="Paper">Paper</button>
+                <button class="Scissors">Scissors</button> 
+            </div>
+    
+
+
+        </div>
 
 <script>
 
-    function game(){ //Simulate a round of the game and keep score for 5 rounds.
+        const startReset= document.querySelector(".startResetButton")
 
+        startReset.addEventListener("click",function() {
+            const everyRoundScore=document.querySelector(".everyRoundScore")
+            const fiveRoundScore=document.querySelector(".fiveRoundScore")    
+           
+            game();
+
+            let Anouncment="Winner gets to five rounds first!";
+            fiveRoundScore.textContent = "";
+
+            let result="Press Start to play";
+            everyRoundScore.textContent = "Choose formation!";
+
+
+
+        });
+
+    function game(){ //Simulate a round of the game and keep score for 5 rounds.
         let playercount=0;
         let aicount=0;
 
@@ -43,6 +58,7 @@
 
         const everyRoundScore=document.querySelector(".everyRoundScore")
         const fiveRoundScore=document.querySelector(".fiveRoundScore")
+
 
         Rock.addEventListener("click", function() {
 
@@ -157,7 +173,6 @@
 }); 
 
 
-
 //everyRoundScore.onclick = () => everyRoundScore.textContent = "pingas";
 
 
@@ -234,7 +249,6 @@
     }
 
 }
-game();
 
 //console.log(playRound(playerSelection,computerSelection));
 
