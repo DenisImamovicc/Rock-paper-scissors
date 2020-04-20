@@ -8,4 +8,11 @@ Feel free to play it at:https://denisimamovicc.github.io/Rock-paper-scissors/. A
 12th april 2020.
 
 Upgrading the game to be playable without having to acess the console to play,by implementing an UI and DOM manipulation to make the UI interactive.
+
+20th april 2020 
+
+Project is completed.Added responsive design and cosmetic touches to make it more compatible with mobile,tablet and desktop.
+The game is now fully playable without needing to go in the console.log to play.
+
+Final version link:https://denisimamovicc.github.io/Rock-paper-scissors/.
 "
